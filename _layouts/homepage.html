@@ -8,6 +8,9 @@ site.github.owner_name }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append:
 site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/homepage.css?v=' | append:
+site.github.build_revision | relative_url }}">
+
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,18 +22,22 @@ site.github.build_revision | relative_url }}">
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-        <h3>Find me:</h3>
-        <span>{{ site.contact }}</span><br/>
+        <div class="midskip"> <span class="smallheader">Contact:</span> 
+        <span class="emailaddr leftsmallskip">{{ site.contact }}</span>
+        </div>
+        <span class="smallheader"> Find me:</span>
+        <br/>
         {% for item in site.socials %}
-            <span>
-            <a class="btn btn-default" href="{{ item.url }}">
+            <span class="smallskip leftskip">
+            <a href="{{ item.url }}">
                 {% if item.logo %}
                     {{ item.logo }}
                 {% else %}
                     {{ item.name }}
                 {% endif %}
             </a>
-            </span> <br/>
+            </span>
+            <br/>
         {% endfor %}
 
         {% if site.show_downloads %}
