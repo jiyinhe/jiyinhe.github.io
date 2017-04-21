@@ -24,3 +24,52 @@
     font-size: 14px;
     font-weight: normal;
 }
+
+.pub-author-me {
+    font-weight: bold; 
+    color: black;
+}
+
+.pub-title {
+    color: black;
+    font-style: italic;
+}
+
+.publabel {
+    cursor: pointer;
+}
+
+span.pubtype-square {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.pubtype {
+    cursor: pointer; 
+}
+
+.pubtype-journal {
+    background-color: #D2691E;
+}
+.pubtype-conference-long {
+    background-color: #4F84C4;
+}
+.pubtype-conference-short {
+    background-color: #5484A4;
+}
+
+.pubtype-editorship {
+    background-color: #DA413D;
+}
+
+.pubtype-other {
+    background-color: #898E8C;
+}
+.pubtype-thesis {
+    background-color: #223A5E;
+}
+.pub-special {
+    color: #B93A32;
+    font-weight: bold;
+}
