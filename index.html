@@ -31,9 +31,23 @@ layout: homepage
         {% endif %}
     {% endfor %}
 
-    <span class="pub-title">{{ item["title"] }}</span>.
+    {% if item["url"] %}
+        <a href="{{ item["url"] }}">{{ item["title"] }}</a>.
+    {% else %}
+        <span class="pub-title"> {{ item["title"] }}</span>.
+    {% endif %}
 
     <span class="pub-desc">{{ item["desc"] }}</span>.
+    {% if item["pdf"] != "" %}
+        [<a href="{{ item["pdf"] }}">pdf</a>]
+    {% endif %}
+
+    {% if item["slides"] != "" %}
+        [<a href="{{ item["slides"] }}">slides</a>]
+
+    {% endif %}
+
+
     {% if item["special"] %}
         <span class="pub-special"> ({{ item["special"] }}) </span>
     {% endif %}
