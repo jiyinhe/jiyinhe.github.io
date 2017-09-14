@@ -1,6 +1,8 @@
 theme: jekyll-theme-architect
 
-# Contact information for the homepage
+include: [ _pages ]
+
+# Variables used in pages
 title: Jiyin He
 description: "Research and random thoughts on information and life"
 contact: jiyinhe[at]acm[dot]org
@@ -18,9 +20,29 @@ socials:
         name: LinkedIn
         url: https://nl.linkedin.com/in/jiyinhe
 
-include: [ _pages ]
+publication_types: 
+    -
+        type: "Conference paper"
+        name: "Conference papers"
 
-publications: 
-    - group_by: "subtype"
-    - sort_by: "year"
-       
+    -
+        type: "Journal article"
+        name: "Journal articles"
+
+    -
+        type: "Book chapter"
+        name: "Book chapters"
+ 
+    -
+        type: "Eds."
+        name: "Eds."
+    -
+        type: "Workshop paper"
+        name: "Workshop papers"
+    -
+        type: "Evaluation campaigns (TREC)"
+        name: "Evaluation campaigns (TREC)"
+    -
+        type: "PhD dissertation"
+        name: "PhD dissertation"
+

@@ -3,5 +3,55 @@ layout: default
 title: Publications - Jiyin He
 permalink: publications.html
 ---
+<h1>Publications
+    <tagline> See also: 
+{% for item in site.research_profile %}
+    <span class="right-space-small">
+    <a href="{{ item.url }}">
+        {{ item.name }}
+    </a>
+    </span>
+{% endfor %}
+    </tagline>
+</h1>
+<hr> 
 
-This is the publication page.
+{% for type in site.publication_types %}
+    <h2>{{type.name}}</h2>
+    {% assign papers = site.data.publications.pub1_by_type[type.type] %}
+    {% for item in papers %}
+        <p class="publication" id={{ item["key"] }}>
+            {% if item['pubtype'] == 'proceedings' %}
+                {% assign authorlist = item['editor'] %}
+            {% else %} 
+                {% assign authorlist = item["author"] %}
+            {% endif %}
+            {% for author in authorlist %}
+                {% if author == "Jiyin He" %}
+                    <strong>{{ author }}</strong>,
+                    {% else %} 
+                    {{ author }},
+                {% endif %}
+            {% endfor %}
+            {% if item["url"] %}
+                <a href="{{ item["url"] }}">{{ item["title"] }}</a>.
+            {% else %}
+                <span class="pub-title"> {{ item["title"] }}</span>.
+            {% endif %}
+
+            <i>{{ item["desc"] }}</i>.
+            {% if item["pdf"] != "" %}
+                [<a href="{{ item["pdf"] }}">pdf</a>]
+            {% endif %}
+
+            {% if item["slides"] != "" %}
+                [<a href="{{ item["slides"] }}">slides</a>]
+
+            {% endif %}
+
+            {% if item["special"] %}
+                <span class="pub-special"> ({{ item["special"] }}) </span>
+            {% endif %}
+        </p>
+    {% endfor %}
+{% endfor %}

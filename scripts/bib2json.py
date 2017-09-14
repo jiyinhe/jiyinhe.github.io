@@ -125,10 +125,11 @@ if __name__ == '__main__':
             entries = sorted(entries, key=lambda x: x[key])
             for k, g in it.groupby(entries, lambda x: x[key]):
                 grouped[k] = sorted(list(g), key=lambda x: x['year'], reverse=True)
-                print k, len(grouped[k])
+                #print k, len(grouped[k])
         except KeyError:
             grouped = {'items': sorted(entries, key=lambda x: x['year'], reverse=True)}
     else:
         grouped = {'items': sorted(entries, key=lambda x: x['year'], reverse=True)} 
 
-    #print js.dumps(grouped) 
+    print js.dumps(grouped) 
+
