@@ -6,6 +6,8 @@ to json
 import simplejson as js
 import sys
 import re
+import argparse
+import itertools as it
 
 # Process an extracted entry
 def process_entry(entry):
@@ -101,10 +103,32 @@ def process_bib(f):
     return entries
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print "usage: python bib2json.py bibfile"
-   
+    parser = argparse.ArgumentParser(description = "convert bibtex to json")
+    parser.add_argument('bibfile', help="The path to the bibtex file.")
+    parser.add_argument('-g', '--group', help='Group the \
+        items by a key. If the key does not exist in ALL items \
+        then all items will be grouped \
+        under the key "items"')
+
+    args = vars(parser.parse_args())
+    bibfile = args['bibfile']
+
     entries = [] 
     with open(sys.argv[1]) as f:
         entries = process_bib(f)
-    print(js.dumps(entries))
+       
+    grouped = {}
+    if ('group' in args):
+        key = args['group']
+        # Check if the key exists for all items
+        try:
+            entries = sorted(entries, key=lambda x: x[key])
+            for k, g in it.groupby(entries, lambda x: x[key]):
+                grouped[k] = sorted(list(g), key=lambda x: x['year'], reverse=True)
+                print k, len(grouped[k])
+        except KeyError:
+            grouped = {'items': sorted(entries, key=lambda x: x['year'], reverse=True)}
+    else:
+        grouped = {'items': sorted(entries, key=lambda x: x['year'], reverse=True)} 
+
+    #print js.dumps(grouped) 

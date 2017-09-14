@@ -1,59 +1,12 @@
 ---
-title: Jiyin He
-layout: homepage 
+layout: default
 ---
 
-<h1>Publications</h1>
-<div class="leftskip">
-    <span class="publabel leftskip label label-">User interactions and simulation</span>
-    <span class="publabel leftskip">Diversification</span>
-    <span class="publabel leftskip">Entity linking</span>
-    <span class="publabel leftskip">Crowdsourcing</span> 
-    <span class="publabel leftskip">Visual interfaces</span>
-</div>
-<!--div class="leftskip">
-    <span class="leftskip pubtype-square pubtype-journal"></span> Journal
-</div-->
-<hr/>
-
-{% for item in site.data.publications.pub1 %}
-    <div class="publication" id={{ item["key"] }}>
-    {% if item['pubtype'] == 'proceedings' %}
-        {% assign authorlist = item['editor'] %}
-    {% else %} 
-        {% assign authorlist = item["author"] %}
-    {% endif %}
-    {% for author in authorlist %}
-        {% if author == "Jiyin He" %}
-        <span class="pub-author-me">{{ author }}</span>,
-        {% else %} 
-        <span class="pub-author">{{ author }}</span>,
-        {% endif %}
-    {% endfor %}
-
-    {% if item["url"] %}
-        <a href="{{ item["url"] }}">{{ item["title"] }}</a>.
-    {% else %}
-        <span class="pub-title"> {{ item["title"] }}</span>.
-    {% endif %}
-
-    <span class="pub-desc">{{ item["desc"] }}</span>.
-    {% if item["pdf"] != "" %}
-        [<a href="{{ item["pdf"] }}">pdf</a>]
-    {% endif %}
-
-    {% if item["slides"] != "" %}
-        [<a href="{{ item["slides"] }}">slides</a>]
-
-    {% endif %}
-
-
-    {% if item["special"] %}
-        <span class="pub-special"> ({{ item["special"] }}) </span>
-    {% endif %}
-    </div>
-    <br/>
-{% endfor %}
-
-
-
+<ol>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ol>
