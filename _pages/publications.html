@@ -16,8 +16,16 @@ permalink: publications.html
 </h1>
 <hr> 
 
+<dl>
 {% for type in site.publication_types %}
-    <h2>{{type.name}}</h2>
+    <li> 
+        <a href="#{{type.id}}">{{ type.name }}</a>
+    </li>
+{% endfor %}
+</dl>
+
+{% for type in site.publication_types %}
+    <h2 id={{ type["id"] }}>{{type.name}}</h2>
     {% assign papers = site.data.publications.pub1_by_type[type.type] %}
     {% for item in papers %}
         <p class="publication" id={{ item["key"] }}>

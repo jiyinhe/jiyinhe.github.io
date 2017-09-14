@@ -24,25 +24,31 @@ publication_types:
     -
         type: "Conference paper"
         name: "Conference papers"
+        id: "conf"
 
     -
         type: "Journal article"
         name: "Journal articles"
+        id: "jour"
 
     -
         type: "Book chapter"
         name: "Book chapters"
- 
+        id: "bcha"
     -
         type: "Eds."
         name: "Eds."
+        id: "eds"
     -
         type: "Workshop paper"
         name: "Workshop papers"
+        id: "work"
     -
         type: "Evaluation campaigns (TREC)"
         name: "Evaluation campaigns (TREC)"
+        id: "eval"
     -
         type: "PhD dissertation"
         name: "PhD dissertation"
+        id: "phd"
 
