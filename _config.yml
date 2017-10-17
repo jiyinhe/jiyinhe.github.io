@@ -16,7 +16,7 @@ research_profile:
 
 socials:
     -
-        logo: <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_bluetxt_80x15.png" width="100" height="20" border="0" alt="View Jiyin He's profile on LinkedIn">
+        logo: <img src="/assets/img/In-China-2C-34px-TM.png" height="25" alt="LinkedIn profile">
         name: LinkedIn
         url: https://nl.linkedin.com/in/jiyinhe
 
@@ -45,7 +45,7 @@ publication_types:
         id: "work"
     -
         type: "Evaluation campaigns (TREC)"
-        name: "Evaluation campaigns (TREC)"
+        name: "Evaluation campaigns"
         id: "eval"
     -
         type: "PhD dissertation"

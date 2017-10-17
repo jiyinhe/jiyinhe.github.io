@@ -1,6 +1,14 @@
 ---
 ---
 @import "{{ site.theme }}";
+body {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #414141;
+}
 
 aside .at_bottom { 
     //position: absolute;
@@ -78,28 +86,51 @@ aside .material-icons {
   }
 }
 
+#main-content {
+    font-size: 17px;
+}
+
+
+#main-content blockquote {
+    font-size: 15px;
+}
+
+
+#main-content h1 {
+    font-size: 32px;
+//    color: black;
+    line-height: 1.7;
+ 
+}
+
 #main-content h1:before {
     color: #ff9999;
+    content: "";
 }
 
 #main-content h2:before {
     color: #ff9999;
+    content: "/";
 }
 
 #main-content h3:before {
     color: #ff9999;
+    content: "//";
 }
 
 #main-content h4:before {
     color: #ff9999;
+    content: "";
 }
 
 #main-content h5:before {
     color: #ff9999;
+    content: "";
 }
 
 #main-content h6:before {
     color: #ff9999;
+    content: "";
 }
 
 //Customer styles
@@ -111,6 +142,7 @@ h1 tagline {
     padding-left: 20px;
 }
 
+
 tagline a {
     padding-left: 10px;
 }
@@ -118,4 +150,21 @@ tagline a {
 .pub-special {
     color: #B93A32;
     font-weight: bold;
+}
+
+.subtitle {
+    font-size: 17px; 
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.notes {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-size: 20px;
+    color: #ff9999; 
+}
+
+p strong em {
+    font-weight: 400;
 }
