@@ -16,7 +16,7 @@ research_profile:
 
 socials:
     -
-        logo: <img src="assets/img/In-China-2C-34px-TM.png" height="25" alt="LinkedIn profile">
+        logo: <img src="/assets/img/In-China-2C-34px-TM.png" height="25" alt="LinkedIn profile">
         name: LinkedIn
         url: https://nl.linkedin.com/in/jiyinhe
 
