@@ -5,7 +5,6 @@ include: [ _pages ]
 # Variables used in pages
 title: Jiyin He
 description: "Research and random thoughts on information and life"
-contact: jiyinhe[at]acm[dot]org
 research_profile:
     -
         name: Google Scholar Citations
