@@ -114,7 +114,7 @@ if __name__ == '__main__':
     bibfile = args['bibfile']
 
     entries = [] 
-    with open(sys.argv[1]) as f:
+    with open(bibfile) as f:
         entries = process_bib(f)
        
     grouped = {}
@@ -131,5 +131,5 @@ if __name__ == '__main__':
     else:
         grouped = {'items': sorted(entries, key=lambda x: x['year'], reverse=True)} 
 
-    print js.dumps(grouped) 
+    print(js.dumps(grouped))
 
